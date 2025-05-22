@@ -1,4 +1,14 @@
-<!DOCTYPE html
+<?php
+
+session_start();
+
+//if failed attempt than displaying it at login page
+if(isset($_SESSION['failed_attempts'])){
+  echo "This is unsuccessful attempt number ". $_SESSION['failed_attempts'];
+}
+
+?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Login</title>
