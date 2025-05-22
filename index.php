@@ -1,11 +1,9 @@
 <?php
-
 session_start();
 //check if user is authenticated and if not redirecting to login page
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['authenticated'])){
   header('Location: /login.php');
 }
-
 ?>
 
 
@@ -21,11 +19,11 @@ if(!isset($_SESSION['username'])){
     <p>Welcome, <?=$_SESSION['username']?></p>
 
     <?php
+    //for date in readable format
     date_default_timezone_set('America/Toronto');
     $mydate=getdate(date("U"));
     echo "$mydate[month] $mydate[mday], $mydate[year]";
-    ?>
-    
+    ?>  
     
   </body>
 
