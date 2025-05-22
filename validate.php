@@ -2,7 +2,7 @@
 
 session_start();
 
-$valid_username = 'harman';
+$valid_username = 'Harman';
 $valid_password = '12345password';
 
 $username = $_REQUEST['username'];
@@ -10,6 +10,7 @@ $_SESSION['username'] = $username;
 $password = $_REQUEST['password'];
 
 if($valid_username == $username && $valid_password == $password){
+  $_SESSION['authenticated'] = 1;
   header('Location: /');
 }
 else{
